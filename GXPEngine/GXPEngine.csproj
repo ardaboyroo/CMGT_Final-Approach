@@ -98,6 +98,7 @@
     <Compile Include="GXPEngine\SoLoud\Soloud.cs" />
     <Compile Include="GXPEngine\SoLoud\SoloudSoundSystem.cs" />
     <Compile Include="Test.cs" />
+    <Compile Include="Test3.cs" />
     <Compile Include="Vec2.cs" />
   </ItemGroup>
   <ItemGroup>
