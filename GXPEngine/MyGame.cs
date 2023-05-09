@@ -5,12 +5,13 @@ using System.Collections.Generic;
 
 public class MyGame : Game {
 
-	public int CurrentLevel;
+	public static int CurrentLevel = 0;
 	public MyGame() : base(1280, 720, false)     // Create a window that's 800x600 and NOT fullscreen
 	{
 		
 
 		Console.WriteLine("MyGame initialized");
+		LevelManagement();
 	}
 
 	// For every game object, Update is called every frame, by the engine:
@@ -22,15 +23,16 @@ public class MyGame : Game {
 	{
 		switch (CurrentLevel)
 		{
-			case 1:
+			case 0:
 				DestroyAll();
 				MainMenu menu = new MainMenu();
 				AddChild(menu);
+				Console.WriteLine("MainMenu loaded");
 				break;
-			case 2:
+			case 1:
 
 				break;
-			case 3:
+			case 2:
 
 				break;
 
