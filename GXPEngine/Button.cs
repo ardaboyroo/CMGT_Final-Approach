@@ -11,11 +11,9 @@ public class Button : AnimationSprite
     public string buttonType;
     public Button(TiledObject obj = null) : base("square.png",1,1)
     {
-        alpha = 1; // set to 0 to make invis
+        alpha = 0; // set to 0 to make invis
 
         buttonType = obj.GetStringProperty("Button");
-
-        
     }
 
     void Update()

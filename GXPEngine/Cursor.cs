@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 public class Cursor : Sprite
     {
 
-   
+    MyGame  myGame;
+
+    SoundChannel UISelectSound;
     public Cursor() : base("circle.png")
     {
+        alpha = 0;
         SetOrigin(this.width/2, this.height/2);
         scale = 0.1f;
 
+        myGame = (MyGame)game;
        
     }
 
@@ -38,7 +42,9 @@ public class Cursor : Sprite
                 // check what the string in Tiled says, act accordingly 
                 if (button.buttonType is "Start" && Input.GetMouseButton(0))
                 {
-                    Console.WriteLine("WHOOOO Start BUTTON");    
+                    Console.WriteLine("WHOOOO Start BUTTON");
+                    myGame.CurrentLevel = 1;
+                    myGame.LevelManagement();
                 }
 
                 if (button.buttonType is "Options" && Input.GetMouseButton(0))
@@ -54,10 +60,16 @@ public class Cursor : Sprite
                 if (button.buttonType is "Quit" && Input.GetMouseButton(0))
                 {
                     Console.WriteLine("WHOOOO Quit BUTTON");
+                    Environment.Exit(0);
                 }
             }
 
         }
+    }
+
+    void PlaySelectSound()
+    {
+        UISelectSound = new Sound("xxxxxxxxxxxxxxxxxx", false, false).Play();
     }
 }
 // this sprite needs to return an id so that the class in questions know with

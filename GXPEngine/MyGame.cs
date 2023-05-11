@@ -7,7 +7,7 @@ using GXPEngine.levels;
 public class MyGame : Game {
 
 	public int CurrentLevel = 0;
-	public MyGame() : base(1280, 720, false)     // Create a window that's 800x600 and NOT fullscreen
+	public MyGame() : base(1280, 704, false)     // Create a window that's 800x600 and NOT fullscreen
 	{
 		
 

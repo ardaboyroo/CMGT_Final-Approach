@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Button.cs" />
     <Compile Include="Cursor.cs" />
+    <Compile Include="GearAnimation.cs" />
     <Compile Include="GXPEngine\AddOns\Gizmos.cs" />
     <Compile Include="GXPEngine\AddOns\SpriteBatch.cs" />
     <Compile Include="GXPEngine\AddOns\TiledLoader.cs" />
