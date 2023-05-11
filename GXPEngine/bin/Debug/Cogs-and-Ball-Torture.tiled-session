@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 3/Project liftoff/Code/Project-LiftOff/GXPEngine/bin/Debug/SpaceMapCompleted.tmx",
+    "activeFile": "Level_1.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -36,11 +36,14 @@
             "scaleInDock": 1
         },
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 2/Redo/Game_Programming/ECM1V.Ed_van_Amstel_Quinten/GXPEngine/bin/Debug/REDO_LVL2.tmx": {
+            "expandedObjectLayers": [
+                6
+            ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 346.75,
-                "y": 235.5
+                "x": 508,
+                "y": 309.5
             }
         },
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 2/Redo/Game_Programming/ECM1V.Ed_van_Amstel_Quinten/GXPEngine/bin/Debug/REDO_LVL2.tmx#LvlDoor": {
@@ -117,15 +120,23 @@
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 3/Project liftoff/Code/Project-LiftOff/GXPEngine/bin/Debug/SpaceMapCompleted.tmx#obstacles": {
             "scaleInDock": 1
         },
+        "Level_1.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 699.5,
+                "y": 395
+            }
+        },
         "MainMenu.tmx": {
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 1,
+            "scale": 0.7993,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 531.5,
-                "y": 274
+                "x": 695.6086575753784,
+                "y": 354.05980232703615
             }
         },
         "level1.tmx": {
@@ -149,14 +160,16 @@
     "map.width": 40,
     "openFiles": [
         "MainMenu.tmx",
-        "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 3/Project liftoff/Code/Project-LiftOff/GXPEngine/bin/Debug/SpaceMapCompleted.tmx"
+        "Level_1.tmx"
     ],
     "project": "Cogs-and-Ball-Torture.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "MainMenu.tmx",
+        "Level_1.tmx",
+        "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 2/Redo/Game_Programming/ECM1V.Ed_van_Amstel_Quinten/GXPEngine/bin/Debug/REDO_LVL2.tmx",
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 3/Project liftoff/Code/Project-LiftOff/GXPEngine/bin/Debug/SpaceMapCompleted.tmx",
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 2/Redo/Game_Programming/ECM1V.Ed_van_Amstel_Quinten/GXPEngine/bin/Debug/REDO_LVL1.tmx",
-        "MainMenu.tmx",
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 3/Project liftoff/Code/Project-LiftOff/GXPEngine/bin/Debug/SpaceMap.tmx",
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 3/Project liftoff/Code/Project-LiftOff/GXPEngine/bin/Debug/Level1.tmx",
         "level1.tmx",
