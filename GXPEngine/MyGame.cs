@@ -2,10 +2,11 @@ using System;                                   // System contains a lot of defa
 using GXPEngine;                                // GXPEngine contains the engine
 using System.Drawing;                           // System.Drawing contains drawing tools such as Color definitions
 using System.Collections.Generic;
+using GXPEngine.levels;
 
 public class MyGame : Game {
 
-	public static int CurrentLevel = 0;
+	public int CurrentLevel = 0;
 	public MyGame() : base(1280, 720, false)     // Create a window that's 800x600 and NOT fullscreen
 	{
 		
@@ -17,23 +18,29 @@ public class MyGame : Game {
 	// For every game object, Update is called every frame, by the engine:
 	void Update() {
 		// Empty
+
 	}
 
-	void LevelManagement()
+	public void LevelManagement()
 	{
+		const int MainMenu = 0;
+		const int level1 = 1;
+
 		switch (CurrentLevel)
 		{
-			case 0:
+			case MainMenu:
 				DestroyAll();
 				MainMenu menu = new MainMenu();
 				AddChild(menu);
 				Console.WriteLine("MainMenu loaded");
 				break;
-			case 1:
-
+			case level1:
+				Level1 Level = new Level1();
+				AddChild(Level);
+			
 				break;
 			case 2:
-
+				
 				break;
 
 		}
