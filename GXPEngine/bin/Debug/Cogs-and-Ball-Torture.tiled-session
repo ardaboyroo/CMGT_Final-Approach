@@ -124,19 +124,19 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 42,
-                "y": 7
+                "x": 639.5,
+                "y": 352
             }
         },
         "MainMenu.tmx": {
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 0.7993,
-            "selectedLayer": 3,
+            "scale": 3,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 963.9684724133617,
-                "y": 547.979482046791
+                "x": 826.5,
+                "y": 497.99999999999994
             }
         },
         "level1.tmx": {

@@ -58,12 +58,15 @@
     <Compile Include="Button.cs" />
     <Compile Include="Cursor.cs" />
     <Compile Include="GearAnimation.cs" />
+    <Compile Include="GearVisualTest.cs" />
     <Compile Include="GXPEngine\AddOns\Gizmos.cs" />
     <Compile Include="GXPEngine\AddOns\SpriteBatch.cs" />
     <Compile Include="GXPEngine\AddOns\TiledLoader.cs" />
+    <Compile Include="HitBoxGround.cs" />
     <Compile Include="LevelLoader.cs" />
-    <Compile Include="levels\Level1.cs" />
-    <Compile Include="levels\MainMenu.cs" />
+    <Compile Include="Scenes\Credit.cs" />
+    <Compile Include="Scenes\Level1.cs" />
+    <Compile Include="Scenes\MainMenu.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Core\Canvas.cs" />
     <Compile Include="GXPEngine\Game.cs" />

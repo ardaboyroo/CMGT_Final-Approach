@@ -30,28 +30,28 @@
   <image source="1_Start_Menu_Background .png" width="1280" height="704"/>
  </imagelayer>
  <objectgroup id="3" name="Buttons">
-  <object id="1" name="Start" class="Button" x="658.74" y="225.515" width="277.361" height="83.7839">
+  <object id="1" name="Start" class="Button" x="654.987" y="223.013" width="284.694" height="87.4506">
    <properties>
     <property name="Button" value="Start"/>
    </properties>
   </object>
-  <object id="2" name="Options" class="Button" x="644.229" y="328.291" width="322.889" height="78.2817">
+  <object id="2" name="Options" class="Button" x="643.229" y="327.291" width="324.556" height="83.2817">
    <properties>
     <property name="Button" value="Options"/>
    </properties>
   </object>
-  <object id="3" name="Credit" class="Button" x="659.489" y="448.066" width="280.872" height="74.7796">
+  <object id="3" name="Credit" class="Button" x="657.489" y="445.733" width="288.205" height="84.7796">
    <properties>
     <property name="Button" value="Credit"/>
    </properties>
   </object>
-  <object id="5" name="Quit" class="Button" x="680.234" y="561.088" width="233.118" height="77.5328">
+  <object id="5" name="Quit" class="Button" x="680.234" y="561.088" width="235.118" height="79.5328">
    <properties>
     <property name="Button" value="Quit"/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup id="7" name="Animation">
-  <object id="8" name="Animated Gears" class="GearAnimation" x="0" y="0" width="600" height="600"/>
+  <object id="8" name="Animated Gears" class="GearAnimation" x="-1.25109" y="32.5285" width="672.563" height="672.563"/>
  </objectgroup>
 </map>
