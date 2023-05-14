@@ -51,6 +51,7 @@ public class MyGame : Game
                 break;
 
             case level1:
+                DestroyAll();
                 Level1 Level = new Level1();
                 AddChild(Level);
                 break;

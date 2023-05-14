@@ -10,11 +10,11 @@ namespace GXPEngine.levels
     class Level1 : GameObject
     {
         
-       // Level Level = new Level("Level_1.tmx");
+        Level Level = new Level("Level_1.tmx");
 
         public Level1()
         {
-           // AddChild(Level);
+           AddChild(Level);
 
         }
 
