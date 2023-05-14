@@ -9,9 +9,10 @@ using TiledMapParser;
 public class Button : AnimationSprite
 {
     public string buttonType;
-    public Button(TiledObject obj = null) : base("square.png",1,1)
+    public float buttonAlpha;
+    public Button(TiledObject obj = null) : base("greyout.png",1,1)
     {
-        alpha = 0; // set to 0 to make invis
+        alpha = 0f; // set to 0 to make invis
 
         buttonType = obj.GetStringProperty("Button");
     }
@@ -19,6 +20,8 @@ public class Button : AnimationSprite
     void Update()
     {
         
+        alpha = buttonAlpha;
+        buttonAlpha= 0f;
     }
 
   

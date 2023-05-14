@@ -3,14 +3,15 @@ using GXPEngine;                                // GXPEngine contains the engine
 using System.Drawing;                           // System.Drawing contains drawing tools such as Color definitions
 using System.Collections.Generic;
 using GXPEngine.levels;
+using GXPEngine.Scenes;
 
 public class MyGame : Game {
 
 	public int CurrentLevel = 0;
+	public MainMenu menu;
+
 	public MyGame() : base(1280, 704, false)     // Create a window that's 800x600 and NOT fullscreen
 	{
-		
-
 		Console.WriteLine("MyGame initialized");
 		LevelManagement();
 	}
@@ -23,24 +24,31 @@ public class MyGame : Game {
 
 	public void LevelManagement()
 	{
-		const int MainMenu = 0;
+		const int mainMenu = 0;
 		const int level1 = 1;
+
+		//Overlays
+		const int credits = 20;
+		const int options = 21;
 
 		switch (CurrentLevel)
 		{
-			case MainMenu:
+			case mainMenu:
 				DestroyAll();
-				MainMenu menu = new MainMenu();
+				menu = new MainMenu();
 				AddChild(menu);
 				Console.WriteLine("MainMenu loaded");
 				break;
+
 			case level1:
 				Level1 Level = new Level1();
 				AddChild(Level);
-			
 				break;
-			case 2:
-				
+
+			case credits:
+				DestroyAll();
+				Credit creditScreen = new Credit();
+				AddChild(creditScreen);
 				break;
 
 		}

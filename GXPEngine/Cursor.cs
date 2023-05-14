@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TiledMapParser;
 
 public class Cursor : Sprite
     {
 
     MyGame  myGame;
+    
 
     SoundChannel UISelectSound;
     public Cursor() : base("circle.png")
@@ -19,6 +21,8 @@ public class Cursor : Sprite
         scale = 0.1f;
 
         myGame = (MyGame)game;
+         
+
        
     }
 
@@ -32,38 +36,60 @@ public class Cursor : Sprite
 
     void CheckCollision()
     {
-        GameObject[] collisions = GetCollisions();
-        for (int i = 0; i < collisions.Length; i++)
+        //check which scene is active for the correct collision data
+        const int mainMenu = 0;
+        const int level1 = 1;
+
+        //Overlays
+        const int credits = 20;
+        const int options = 21;
+        switch (myGame.CurrentLevel)
         {
-            if (collisions[i] is Button)
-            {
-                Button button = (Button)collisions[i];
-
-                // check what the string in Tiled says, act accordingly 
-                if (button.buttonType is "Start" && Input.GetMouseButton(0))
+        case mainMenu: 
+            GameObject[] collisions = GetCollisions();
+                for (int i = 0; i < collisions.Length; i++)
                 {
-                    Console.WriteLine("WHOOOO Start BUTTON");
-                    myGame.CurrentLevel = 1;
-                    myGame.LevelManagement();
-                }
 
-                if (button.buttonType is "Options" && Input.GetMouseButton(0))
-                {
-                    Console.WriteLine("WHOOOO Options BUTTON");
-                }
+                    if (collisions[i] is Button)
+                    {
+                        Button button = (Button)collisions[i];
 
-                if (button.buttonType is "Credit" && Input.GetMouseButton(0))
-                {
-                    Console.WriteLine("WHOOOO Credit BUTTON");
-                }
+                        //play clicky select sound
+                        PlaySelectSound();
 
-                if (button.buttonType is "Quit" && Input.GetMouseButton(0))
-                {
-                    Console.WriteLine("WHOOOO Quit BUTTON");
-                    Environment.Exit(0);
-                }
-            }
+                        //highlight area
+                        button.buttonAlpha = 0.1f;
 
+                        // check what the string in Tiled says, act accordingly 
+                        if (button.buttonType is "Start" && Input.GetMouseButton(0))
+                        {
+                            Console.WriteLine("WHOOOO Start BUTTON");
+                            myGame.CurrentLevel = 1;
+                            myGame.LevelManagement();
+                        }
+
+                        if (button.buttonType is "Options" && Input.GetMouseButton(0))
+                        {
+                            Console.WriteLine("WHOOOO Options BUTTON");
+                        }
+
+                        if (button.buttonType is "Credit" && Input.GetMouseButton(0))
+                        {
+                            Console.WriteLine("WHOOOO Credit BUTTON");
+                            myGame.CurrentLevel = 20;
+                            myGame.LevelManagement();
+                        }
+
+                        if (button.buttonType is "Quit" && Input.GetMouseButton(0))
+                        {
+                            Console.WriteLine("WHOOOO Quit BUTTON");
+                            Environment.Exit(0);
+                        }
+
+                    }
+
+                }   
+                return;
         }
     }
 

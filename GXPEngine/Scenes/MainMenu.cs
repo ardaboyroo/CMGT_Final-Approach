@@ -17,19 +17,11 @@ public class MainMenu : GameObject
 
         Level Mainmenu = new Level("MainMenu.tmx");
         AddChild(Mainmenu);
+
+        GearVisualTest Gear = new GearVisualTest();
+        //AddChild(Gear);
     }
-    //load tiled level which has buttons
     
-    // give buttons id's in tiled and link actions to them 
-    // get collision info with mouse and which button
-
-
-    //load animation sprite with moving background
-
-    void ButtonCheck()
-    {
-        
-    }
 
 }
 

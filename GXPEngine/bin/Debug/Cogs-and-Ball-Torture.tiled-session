@@ -124,19 +124,25 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 42,
-                "y": 7
+                "x": 663.5,
+                "y": 410
             }
+        },
+        "Level_1.tmx#5_Tilestest32_Final": {
+            "scaleInDock": 1
+        },
+        "Level_1.tmx#checkers": {
+            "scaleInDock": 1
         },
         "MainMenu.tmx": {
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 0.7993,
-            "selectedLayer": 3,
+            "scale": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 963.9684724133617,
-                "y": 547.979482046791
+                "x": 815.5,
+                "y": 312
             }
         },
         "level1.tmx": {
