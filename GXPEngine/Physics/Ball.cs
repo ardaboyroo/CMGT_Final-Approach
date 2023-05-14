@@ -9,13 +9,15 @@ public class Ball : EasyDraw
     public static bool wordy = false;
     public static float bounciness = 0.98f;
     // For ease of testing / changing, we assume every ball has the same acceleration (gravity):
-    public static Vec2 acceleration = new Vec2(0, 0);
+    public static Vec2 acceleration = new Vec2(0, 0.25f);
 
     public Vec2 velocity;
     public Vec2 position;
 
     public readonly int radius;
     public readonly bool moving;
+
+    MyGame myGame;
 
     // Mass = density * volume.
     // In 2D, we assume volume = area (=all objects are assumed to have the same "depth")
@@ -34,6 +36,8 @@ public class Ball : EasyDraw
 
     public Ball(int pRadius, Vec2 pPosition, Vec2 pVelocity = new Vec2(), bool moving = true, int color = 230) : base(pRadius * 2 + 1, pRadius * 2 + 1)
     {
+        myGame = (MyGame)game;
+        myGame.movers.Add(this);
         radius = pRadius;
         position = pPosition;
         velocity = pVelocity;
@@ -64,11 +68,13 @@ public class Ball : EasyDraw
 
     public void Step()
     {
+        //Console.WriteLine($"X: {x} Y: {y}");
+
         velocity += acceleration;
         _oldPosition = position;
         position += velocity;
         // This can be removed after adding line segment collision detection:
-        BoundaryWrapAround();
+        //BoundaryWrapAround();
 
         if (velocity.Length() > 0)      // Don't resolve collision if not moving
         {
@@ -153,7 +159,6 @@ public class Ball : EasyDraw
 
         for (int i = 0; i < myGame.GetNumberOfLines(); i++)
         {
-
             LineSegment _lineSegment = myGame.GetLine(i);
 
             Vec2 differenceVector = position - _lineSegment.start;
