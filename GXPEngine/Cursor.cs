@@ -1,4 +1,4 @@
-﻿using GXPEngine;
+using GXPEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ public class Cursor : Sprite
     SoundChannel UISelectSound;
     public Cursor() : base("circle.png")
     {
-        alpha = 0;
+        alpha = 1;
         SetOrigin(this.width/2, this.height/2);
         scale = 0.1f;
 
