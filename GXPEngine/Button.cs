@@ -10,7 +10,7 @@ public class Button : AnimationSprite
 {
     public string buttonType;
     public float buttonAlpha;
-    public Button(TiledObject obj = null) : base("greyout.png",1,1)
+    public Button(TiledObject obj = null) : base("square.png",1,1)
     {
         alpha = 0f; // set to 0 to make invis
 

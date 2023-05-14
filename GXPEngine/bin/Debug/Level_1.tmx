@@ -32,4 +32,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="2" name="Collisions">
+  <object id="3" name="Ball" class="Gear" x="138.947" y="108.07" width="32" height="32">
+   <ellipse/>
+  </object>
+ </objectgroup>
 </map>

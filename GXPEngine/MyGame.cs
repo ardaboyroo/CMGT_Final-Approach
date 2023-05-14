@@ -5,56 +5,66 @@ using System.Collections.Generic;
 using GXPEngine.levels;
 using GXPEngine.Scenes;
 
-public class MyGame : Game {
+public class MyGame : Game
+{
 
-	public int CurrentLevel = 0;
-	public MainMenu menu;
+    public int CurrentLevel = 0;
+    public MainMenu menu;
 
-	public MyGame() : base(1280, 704, false)     // Create a window that's 800x600 and NOT fullscreen
-	{
-		Console.WriteLine("MyGame initialized");
-		LevelManagement();
-	}
+    Canvas _lineContainer = null;
 
-	// For every game object, Update is called every frame, by the engine:
-	void Update() {
-		// Empty
+    public List<Ball> movers;
+    public List<LineSegment> _lines;
 
-	}
+    public MyGame() : base(1280, 704, false)     // Create a window that's 800x600 and NOT fullscreen
+    {
+        Console.WriteLine("MyGame initialized");
+        LevelManagement();
 
-	public void LevelManagement()
-	{
-		const int mainMenu = 0;
-		const int level1 = 1;
+        _lineContainer = new Canvas(width, height);
+        AddChild(_lineContainer);
+    }
 
-		//Overlays
-		const int credits = 20;
-		const int options = 21;
+    // For every game object, Update is called every frame, by the engine:
+    void Update()
+    {
+        // Empty
 
-		switch (CurrentLevel)
-		{
-			case mainMenu:
-				DestroyAll();
-				menu = new MainMenu();
-				AddChild(menu);
-				Console.WriteLine("MainMenu loaded");
-				break;
+    }
 
-			case level1:
-				DestroyAll();
-				Level1 Level = new Level1();
-				AddChild(Level);
-				break;
+    public void LevelManagement()
+    {
+        const int mainMenu = 0;
+        const int level1 = 1;
 
-			case credits:
-				DestroyAll();
-				Credit creditScreen = new Credit();
-				AddChild(creditScreen);
-				break;
+        //Overlays
+        const int credits = 20;
+        const int options = 21;
 
-		}
+        switch (CurrentLevel)
+        {
+            case mainMenu:
+                DestroyAll();
+                menu = new MainMenu();
+                AddChild(menu);
+                Console.WriteLine("MainMenu loaded");
+                break;
 
-	}
+            case level1:
+                DestroyAll();
+                Level1 Level = new Level1();
+                AddChild(Level);
+                break;
+
+            case credits:
+                DestroyAll();
+                Credit creditScreen = new Credit();
+                AddChild(creditScreen);
+                break;
+
+        }
+
+    }
 
     void DestroyAll()
     {
@@ -66,8 +76,43 @@ public class MyGame : Game {
         }
     }
 
+    public int GetNumberOfLines()
+    {
+        return _lines.Count;
+    }
+
+
+
+    public LineSegment GetLine(int index)
+    {
+        if (index >= 0 && index < _lines.Count)
+        {
+            return _lines[index];
+        }
+        return null;
+    }
+
+    public int GetNumberOfMovers()
+    {
+        return movers.Count;
+    }
+
+    public Ball GetMover(int index)
+    {
+        if (index >= 0 && index < movers.Count)
+        {
+            return movers[index];
+        }
+        return null;
+    }
+
+    public void DrawLine(Vec2 start, Vec2 end)
+    {
+        _lineContainer.graphics.DrawLine(Pens.White, start.x, start.y, end.x, end.y);
+    }
+
     static void Main()                          // Main() is the first method that's called when the program is run
-	{
-		new MyGame().Start();                   // Create a "MyGame" and start it
-	}
+    {
+        new MyGame().Start();                   // Create a "MyGame" and start it
+    }
 }
