@@ -1,7 +1,7 @@
 ﻿using System;
 using GXPEngine;	// For Mathf
 
-public struct Vec2 
+public struct Vec2
 {
     public float x;
     public float y;
@@ -50,20 +50,39 @@ public struct Vec2
         return result;
     }
 
-
     public float Dot(Vec2 other)
     {
         return x * other.x + y * other.y;
     }
 
-    public Vec2 Normal()
+    public Vec2 Normal(bool reversed = false)
     {
-        return new Vec2(-y, x).Normalized();
+        if (!reversed)
+        {
+            return new Vec2(-y, x).Normalized();
+        }
+        else
+        {
+            return new Vec2(y, -x).Normalized();
+        }
     }
 
     public void Reflect(Vec2 pNormal, float pBounciness = 1)
     {
         this -= (1 + pBounciness) * (Dot(pNormal.Normalized()) * pNormal.Normalized());
+    }
+
+    public float ScalarProjection(Vec2 scalar)
+    {
+        Vec2 dot = new Vec2(x, y);
+        return dot.Dot(scalar.Normalized());
+    }
+
+    public Vec2 UnitNormal()
+    {
+        Vec2 unitNormal = new Vec2(x, y);
+        unitNormal.Normalized();
+        return unitNormal.Normal();
     }
 
     public static Vec2 operator +(Vec2 left, Vec2 right)
@@ -89,6 +108,16 @@ public struct Vec2
     public static Vec2 operator /(Vec2 v, float scalar)
     {
         return new Vec2(v.x / scalar, v.y / scalar);
+    }
+
+    public static bool operator ==(Vec2 vec1, Vec2 vec2){ 
+        if (vec1.x == vec2.x && vec1.y == vec2.y) return true;
+        else return false;
+    }
+
+    public static bool operator !=(Vec2 vec1, Vec2 vec2){ 
+        if (vec1.x != vec2.x || vec1.y != vec2.y) return true;
+        else return false;
     }
 
     public void SetAngleDegrees(float angle)

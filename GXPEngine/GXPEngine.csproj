@@ -56,6 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
+    <Compile Include="Physics\Arrow.cs" />
+    <Compile Include="Physics\Ball.cs" />
+    <Compile Include="Physics\CollisionInfo.cs" />
     <Compile Include="Cursor.cs" />
     <Compile Include="GearAnimation.cs" />
     <Compile Include="GearVisualTest.cs" />
@@ -64,6 +67,7 @@
     <Compile Include="GXPEngine\AddOns\TiledLoader.cs" />
     <Compile Include="HitBoxGround.cs" />
     <Compile Include="LevelLoader.cs" />
+    <Compile Include="Physics\LineSegment.cs" />
     <Compile Include="Scenes\Credit.cs" />
     <Compile Include="Scenes\Level1.cs" />
     <Compile Include="Scenes\MainMenu.cs" />
@@ -105,7 +109,7 @@
     <Compile Include="GXPEngine\FMOD\FMODSoundSystem.cs" />
     <Compile Include="GXPEngine\SoLoud\Soloud.cs" />
     <Compile Include="GXPEngine\SoLoud\SoloudSoundSystem.cs" />
-    <Compile Include="Vec2.cs" />
+    <Compile Include="Physics\Vec2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

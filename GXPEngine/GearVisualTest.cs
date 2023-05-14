@@ -9,7 +9,7 @@ namespace GXPEngine
     public class GearVisualTest : Sprite
     {
         float Vx = 1.5f;
-        public GearVisualTest() : base("TestGear.png")
+        public GearVisualTest() : base("circle.png")
         {
             SetOrigin(this.width/2,this.height/2);
             SetXY(0 , game.height/2);
