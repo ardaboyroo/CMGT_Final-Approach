@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using GXPEngine;
 using TiledMapParser;
@@ -8,7 +9,7 @@ public class Ball : EasyDraw
     // These four public static fields are changed from MyGame, based on key input (see Console):
     public static bool drawDebugLine = false;
     public static bool wordy = false;
-    public static float bounciness = 0.9f;
+    public static float bounciness = 0.6f;
     // For ease of testing / changing, we assume every ball has the same acceleration (gravity):
     public static Vec2 acceleration = new Vec2(0, 0.25f);
 
@@ -17,6 +18,8 @@ public class Ball : EasyDraw
 
     public readonly int radius;
     public readonly bool moving;
+
+    List<CollisionInfo> collisions;
 
     MyGame myGame;
 
@@ -45,6 +48,7 @@ public class Ball : EasyDraw
         myGame = (MyGame)game;
         myGame.movers.Add(this);
 
+        collisions = new List<CollisionInfo>();
 
         velocity = new Vec2(1, 1);
         this.moving = true;
@@ -110,11 +114,8 @@ public class Ball : EasyDraw
         if (velocity.Length() > 0)      // Don't resolve collision if not moving
         {
 
-            CollisionInfo firstCollision = FindEarliestCollision();
-            if (firstCollision != null)
-            {
-                ResolveCollision(firstCollision);
-            }
+            FindEarliestCollision();
+            ResolveCollision(collisions);
 
         }
 
@@ -181,7 +182,7 @@ public class Ball : EasyDraw
                     float toi = TimeOfImpact(this, mover); // TODO TimeOfImpact(_oldPosition - mover.position, , mover);
 
                     Console.WriteLine(toi);
-                    return new CollisionInfo(relativePosition, mover, toi); //TODO: different normal
+                    collisions.Add(new CollisionInfo(relativePosition, mover, toi)); //TODO: different normal
                     // TODO: Don't *return* here!
                 }
             }
@@ -205,11 +206,11 @@ public class Ball : EasyDraw
             {
                 if (!(ballDistance < 0))
                 {
-                    return new CollisionInfo(lineVector.Normalized().Normal(), _lineSegment, ballDistance);
+                    collisions.Add(new CollisionInfo(lineVector.Normalized().Normal(), _lineSegment, ballDistance));
                 }
                 else
                 {
-                    return new CollisionInfo(lineVector.Normalized().Normal(true), _lineSegment, -ballDistance);
+                    collisions.Add(new CollisionInfo(lineVector.Normalized().Normal(true), _lineSegment, -ballDistance));
                 }
             }
         }
@@ -217,21 +218,25 @@ public class Ball : EasyDraw
         return null;
     }
 
-    void ResolveCollision(CollisionInfo col)
+    void ResolveCollision(List<CollisionInfo> cols)
     {
         // TODO: resolve the collision correctly: position reset & velocity reflection.
         // ...this is not an ideal collision resolve:
-        if (col.other is Ball)
+        for (int i = cols.Count - 1; i >= 0; i--)
         {
-            position.SetXY(PointOfImpact(col.timeOfImpact));
-            Vec2 colSurface = col.normal.Normal();
-            velocity.Reflect(col.normal);
-        }
-        if (col.other is LineSegment)
-        {
-            position += PointOfImpactDiscrete(col);
-            velocity.Reflect(col.normal, bounciness);
-
+            if (cols[i].other is Ball)
+            {
+                position.SetXY(PointOfImpact(cols[i].timeOfImpact));
+                Vec2 colSurface = cols[i].normal.Normal();
+                velocity.Reflect(cols[i].normal, bounciness);
+                cols.RemoveAt(i);
+            }
+            else if (cols[i].other is LineSegment)
+            {
+                position += PointOfImpactDiscrete(cols[i]);
+                velocity.Reflect(cols[i].normal, bounciness);
+                cols.RemoveAt(i);
+            }
         }
     }
 
