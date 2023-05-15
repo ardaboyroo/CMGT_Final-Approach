@@ -95,6 +95,16 @@ public struct Vec2
         return new Vec2(left.x - right.x, left.y - right.y);
     }
 
+    public static Vec2 operator -(Vec2 left, int right)
+    {
+        return new Vec2(left.x - right, left.y - right);
+    }
+
+    public static Vec2 operator -(int left, Vec2 right)
+    {
+        return new Vec2(left - right.x, left - right.y);
+    }
+
     public static Vec2 operator *(Vec2 v, float scalar)
     {
         return new Vec2(v.x * scalar, v.y * scalar);
@@ -110,12 +120,14 @@ public struct Vec2
         return new Vec2(v.x / scalar, v.y / scalar);
     }
 
-    public static bool operator ==(Vec2 vec1, Vec2 vec2){ 
+    public static bool operator ==(Vec2 vec1, Vec2 vec2)
+    {
         if (vec1.x == vec2.x && vec1.y == vec2.y) return true;
         else return false;
     }
 
-    public static bool operator !=(Vec2 vec1, Vec2 vec2){ 
+    public static bool operator !=(Vec2 vec1, Vec2 vec2)
+    {
         if (vec1.x != vec2.x || vec1.y != vec2.y) return true;
         else return false;
     }

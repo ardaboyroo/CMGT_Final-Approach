@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="40" height="22" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="6">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="40" height="22" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="31">
  <tileset firstgid="1" name="checkers" tilewidth="32" tileheight="32" tilecount="4" columns="2">
   <image source="checkers.png" width="64" height="64"/>
  </tileset>
@@ -33,11 +33,30 @@
 </data>
  </layer>
  <objectgroup id="2" name="Collisions">
-  <object id="3" name="gear" class="Gear" x="174.447" y="126.57" width="32" height="32">
+  <object id="3" name="gear" class="Ball" x="32.2803" y="55.7367" width="32" height="32">
    <ellipse/>
   </object>
-  <object id="3" name="Collision" class="CollisionLine" x="29.7448" y="128.963" width="140" height="50" rotation="45.0666"/>
-  <object id="4" name="Collision" class="CollisionLine" x="129.771" y="228.464" width="140" height="50" rotation="0.0666"/>
-  <object id="5" class="Ball" x="124.5" y="90" width="30" height="28.5"/>
+  <object id="3" name="hitbox" class="CollisionLine" x="29.7448" y="128.963" width="140" height="18.4088" rotation="45"/>
+  <object id="4" name="hitbox" class="CollisionLine" x="129.771" y="228.464" width="148.665" height="21.9915" rotation="0.0666"/>
+  <object id="9" name="hitbox" class="CollisionLine" x="386.334" y="229.671" width="148.665" height="21.9915" rotation="0.0666"/>
+  <object id="10" name="hitbox" class="CollisionLine" x="740.668" y="227.004" width="148.665" height="21.9915" rotation="0.0666"/>
+  <object id="11" name="hitbox" class="CollisionLine" x="997.334" y="227.338" width="181.67" height="21.9915" rotation="0.0666"/>
+  <object id="12" name="hitbox" class="CollisionLine" x="1221.67" y="69.1096" width="57.9968" height="21.9915" rotation="0.0666"/>
+  <object id="13" name="hitbox" class="CollisionLine" x="775.001" y="325.004" width="404.304" height="21.9915" rotation="0.0666"/>
+  <object id="14" name="hitbox" class="CollisionLine" x="1157.67" y="419.7" width="123.33" height="21.9915" rotation="0.0666"/>
+  <object id="15" name="hitbox" class="CollisionLine" x="1156.34" y="348.034" width="23.3472" height="69.036" rotation="0.0666"/>
+  <object id="16" name="hitbox" class="CollisionLine" x="775.667" y="452.338" width="206.665" height="21.9915" rotation="0.0666"/>
+  <object id="17" name="hitbox" class="CollisionLine" x="544.332" y="547.332" width="440" height="21.9915" rotation="0.0666"/>
+  <object id="18" name="hitbox" class="CollisionLine" x="646.998" y="165.71" width="114.667" height="21.9915" rotation="0.0666"/>
+  <object id="19" name="hitbox" class="CollisionLine" x="739.486" y="188.878" width="23.7575" height="36.5376" rotation="0.0666"/>
+  <object id="21" name="hitbox" class="CollisionLine" x="643.455" y="189.065" width="23.7575" height="249.205" rotation="0.0666"/>
+  <object id="23" name="hitbox" class="CollisionLine" x="0.334167" y="517.671" width="65.3325" height="21.9915" rotation="0.0666"/>
+  <object id="24" name="hitbox" class="CollisionLine" x="36.4287" y="291.909" width="25.6418" height="28.9006" rotation="0.0666"/>
+  <object id="25" name="hitbox" class="CollisionLine" x="62.1551" y="519.68" width="136.918" height="14.5619" rotation="315"/>
+  <object id="26" name="hitbox" class="CollisionLine" x="-12.409" y="368.885" width="88.6097" height="15.8656" rotation="315"/>
+  <object id="27" name="hitbox" class="CollisionLine" x="158" y="419.671" width="56.6666" height="21.9915" rotation="0.0666"/>
+  <object id="28" name="hitbox" class="CollisionLine" x="401.667" y="404.462" width="206.939" height="18.4088" rotation="45"/>
+  <object id="29" name="hitbox" class="CollisionLine" x="388.371" y="379.731" width="23.7575" height="36.5376" rotation="0.0666"/>
+  <object id="30" name="hitbox" class="CollisionLine" x="357.867" y="355.723" width="53.7581" height="25.2838" rotation="0.0666"/>
  </objectgroup>
 </map>

@@ -8,7 +8,7 @@ public class Ball : EasyDraw
     // These four public static fields are changed from MyGame, based on key input (see Console):
     public static bool drawDebugLine = false;
     public static bool wordy = false;
-    public static float bounciness = 0.98f;
+    public static float bounciness = 0.9f;
     // For ease of testing / changing, we assume every ball has the same acceleration (gravity):
     public static Vec2 acceleration = new Vec2(0, 0.25f);
 
@@ -35,18 +35,18 @@ public class Ball : EasyDraw
 
     float _density = 1;
 
-    bool initialized=false;
+    bool initialized = false;
 
-    public Ball(TiledObject obj) : base(30,30)
+    public Ball(TiledObject obj) : base(30, 30)
     {
-        radius=15;
-        Draw(200,200,200);
+        radius = 15;
+        Draw(200, 200, 200);
 
-                myGame = (MyGame)game;
+        myGame = (MyGame)game;
         myGame.movers.Add(this);
 
 
-        velocity = new Vec2(1,1);
+        velocity = new Vec2(1, 1);
         this.moving = true;
 
         //position = pPosition;
@@ -96,8 +96,8 @@ public class Ball : EasyDraw
 
         if (!initialized)
         {
-            position=new Vec2(x,y);
-            initialized=true;
+            position = new Vec2(x, y);
+            initialized = true;
         }
         //Console.WriteLine($"X: {x} Y: {y}");
 
@@ -125,12 +125,12 @@ public class Ball : EasyDraw
         ShowDebugInfo();
     }
 
-    float TimeOfImpact(Vec2 relativePositionStart, Vec2 movingBallVelocity, float sumRadii)
+    float TimeOfImpact(Ball p, Ball q)
     {
-        Vec2 u = relativePositionStart;
-        float a = Mathf.Pow(movingBallVelocity.Length(), 2);
-        float b = u.Dot(movingBallVelocity) * 2;
-        float c = Mathf.Pow(u.Length(), 2) - Mathf.Pow(sumRadii, 2);
+        Vec2 u = p.position - q.position;
+        float a = Mathf.Pow(p.velocity.Length(), 2);
+        float b = u.Dot(p.velocity) * 2;
+        float c = Mathf.Pow(u.Length(), 2) - Mathf.Pow(p.radius + q.radius, 2);
 
         float D = (b * b) - 4 * a * c;
 
@@ -178,7 +178,7 @@ public class Ball : EasyDraw
                     // TODO: compute correct normal and time of impact, and 
                     // 		 return *earliest* collision instead of *first detected collision*:
 
-                    float toi = 0; // TODO TimeOfImpact(_oldPosition - mover.position, , mover);
+                    float toi = TimeOfImpact(this, mover); // TODO TimeOfImpact(_oldPosition - mover.position, , mover);
 
                     Console.WriteLine(toi);
                     return new CollisionInfo(relativePosition, mover, toi); //TODO: different normal
@@ -230,7 +230,7 @@ public class Ball : EasyDraw
         if (col.other is LineSegment)
         {
             position += PointOfImpactDiscrete(col);
-            velocity.Reflect(col.normal);
+            velocity.Reflect(col.normal, bounciness);
 
         }
     }
