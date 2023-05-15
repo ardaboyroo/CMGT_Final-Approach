@@ -17,7 +17,7 @@ class CollisionLine : AnimationSprite
         alpha = 0.1f;
         Console.WriteLine(rotation);
         // suggested fix: (1) don't do this:
-        AddChild(new LineSegment(new Vec2(x - width / 2, y - height / 2), new Vec2(x + width / 2, y - height / 2)));
+        //AddChild(new LineSegment(new Vec2(obj.X - width / 2, obj.Y - height / 2), new Vec2(obj.X + width / 2, obj.Y - height / 2)));
         Console.WriteLine(width);
         //AddChild(new LineSegment(new Vec2(0, 500), new Vec2(1200, 500)));
     }

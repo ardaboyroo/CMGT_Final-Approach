@@ -1,6 +1,7 @@
 ﻿using GXPEngine;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Security.Policy;
 using TiledMapParser;
 
@@ -8,9 +9,11 @@ using TiledMapParser;
 public class Level : GameObject
 {
     public static TiledLoader loader;
+    MyGame myGame;
 
     public Level(string filename)
     {
+        myGame = (MyGame)game;
         loader = new TiledLoader(filename);
         CreateLevel();
 
@@ -33,6 +36,7 @@ public class Level : GameObject
             CollisionLine cLine = line as CollisionLine;
             var corners = cLine.GetExtents(); // returns global space points
             Console.WriteLine("TODO: In MyGame, add a collision line from {0} to {1}",corners[0],corners[1]);
+            myGame.AddChild(new LineSegment(new Vec2(corners[0].x, corners[0].y), new Vec2(corners[1].x, corners[1].y)));
             // Create a new LineSegment here (in global space)
             // MyGame.AddLine(corners[0],corners[1],...)
         }
