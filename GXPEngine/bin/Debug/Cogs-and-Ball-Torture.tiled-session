@@ -124,8 +124,8 @@
             "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 652.5,
-                "y": 399
+                "x": 493.5,
+                "y": 426
             }
         },
         "Level_1.tmx#5_Tilestest32_Final": {
@@ -141,8 +141,8 @@
             "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 815.5,
-                "y": 315
+                "x": 641.5,
+                "y": 673
             }
         },
         "level1.tmx": {
@@ -170,8 +170,8 @@
     "project": "Cogs-and-Ball-Torture.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "MainMenu.tmx",
         "Level_1.tmx",
+        "MainMenu.tmx",
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 2/Redo/Game_Programming/ECM1V.Ed_van_Amstel_Quinten/GXPEngine/bin/Debug/REDO_LVL2.tmx",
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 3/Project liftoff/Code/Project-LiftOff/GXPEngine/bin/Debug/SpaceMapCompleted.tmx",
         "C:/Users/qvana/OneDrive/Documents/CMGT-Y1/Term 2/Redo/Game_Programming/ECM1V.Ed_van_Amstel_Quinten/GXPEngine/bin/Debug/REDO_LVL1.tmx",

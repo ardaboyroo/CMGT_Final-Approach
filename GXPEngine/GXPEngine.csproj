@@ -55,8 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Box.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="CollisionLine.cs" />
+    <Compile Include="Driehoek.cs" />
+    <Compile Include="FinishArea.cs" />
     <Compile Include="Gear.cs" />
     <Compile Include="Physics\Arrow.cs" />
     <Compile Include="Physics\Ball.cs" />
@@ -112,6 +115,7 @@
     <Compile Include="GXPEngine\SoLoud\Soloud.cs" />
     <Compile Include="GXPEngine\SoLoud\SoloudSoundSystem.cs" />
     <Compile Include="Physics\Vec2.cs" />
+    <Compile Include="SteamPipe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -16,6 +16,9 @@ namespace GXPEngine.levels
         {
            AddChild(Level);
 
+            Cursor Mouse = new Cursor();
+            AddChild(Mouse);
+
         }
 
         

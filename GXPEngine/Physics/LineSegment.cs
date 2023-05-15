@@ -29,6 +29,7 @@ namespace GXPEngine
             start = pStart;
             end = pEnd;
             color = pColor;
+        
             lineWidth = pLineWidth;
             myGame._lines.Add(this);
             myGame.movers.Add(new Ball(0, start, new Vec2(), false));

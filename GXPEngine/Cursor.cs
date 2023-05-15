@@ -14,6 +14,8 @@ public class Cursor : Sprite
     
 
     SoundChannel UISelectSound;
+
+    bool soundPlayed;
     public Cursor() : base("circle.png")
     {
         alpha = 1;
@@ -32,6 +34,7 @@ public class Cursor : Sprite
         this.y = Input.mouseY;
 
         CheckCollision();
+        
     }
 
     void CheckCollision()
@@ -49,13 +52,14 @@ public class Cursor : Sprite
             GameObject[] collisions = GetCollisions();
                 for (int i = 0; i < collisions.Length; i++)
                 {
-
+                    Console.WriteLine(collisions[i]);
                     if (collisions[i] is Button)
                     {
                         Button button = (Button)collisions[i];
 
                         //play clicky select sound
                         PlaySelectSound();
+                        soundPlayed= true;
 
                         //highlight area
                         button.buttonAlpha = 0.1f;
@@ -87,6 +91,7 @@ public class Cursor : Sprite
                         }
 
                     }
+                   // else if (collisions[i] is "Greyout.png"){ soundPlayed= false; }
 
                 }   
                 return;
@@ -95,8 +100,10 @@ public class Cursor : Sprite
 
     void PlaySelectSound()
     {
-        UISelectSound = new Sound("xxxxxxxxxxxxxxxxxx", false, false).Play();
+        if (!soundPlayed)
+        {
+            //UISelectSound = new Sound("menubutton.wav", false, false).Play();
+        }
     }
 }
-// this sprite needs to return an id so that the class in questions know with
-// which item the cursor is colliding
+

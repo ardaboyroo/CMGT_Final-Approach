@@ -62,7 +62,7 @@ public class MyGame : Game
             case level1:
                 DestroyAll();
                 //AddChild(new Ball(16, new Vec2(100, 100)));
-                AddChild(new LineSegment(new Vec2(0, 500), new Vec2(1200, 500)));
+              
                 Level1 Level = new Level1();
                 AddChild(Level);
                 break;
