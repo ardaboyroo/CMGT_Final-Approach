@@ -8,7 +8,7 @@ public class Ball : EasyDraw
     // These four public static fields are changed from MyGame, based on key input (see Console):
     public static bool drawDebugLine = false;
     public static bool wordy = false;
-    public static float bounciness = 0.7f;
+    public static float bounciness = 0.9f;
     // For ease of testing / changing, we assume every ball has the same acceleration (gravity):
     public static Vec2 acceleration = new Vec2(0, 0.25f);
 
