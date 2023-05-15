@@ -122,10 +122,10 @@
         },
         "Level_1.tmx": {
             "scale": 1,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 663.5,
-                "y": 410
+                "x": 493.5,
+                "y": 426
             }
         },
         "Level_1.tmx#5_Tilestest32_Final": {
@@ -141,8 +141,8 @@
             "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 815.5,
-                "y": 312
+                "x": 641.5,
+                "y": 673
             }
         },
         "level1.tmx": {
@@ -165,8 +165,7 @@
     "map.lastUsedFormat": "tmx",
     "map.width": 40,
     "openFiles": [
-        "MainMenu.tmx",
-        "Level_1.tmx"
+        "MainMenu.tmx"
     ],
     "project": "Cogs-and-Ball-Torture.tiled-project",
     "property.type": "string",
