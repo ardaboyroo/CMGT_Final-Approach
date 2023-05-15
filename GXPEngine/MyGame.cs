@@ -36,6 +36,7 @@ public class MyGame : Game
     void Update()
     {
         StepThroughMovers();
+        //Console.WriteLine(_lines.Count);
         // Empty
 
     }

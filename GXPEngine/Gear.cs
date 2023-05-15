@@ -13,7 +13,7 @@ class Gear : AnimationSprite
 
     public Gear(TiledObject obj = null) : base("circle.png", 1, 1)
     {
-        Console.WriteLine($"X: {x} Y: {y}");
+        Console.WriteLine($"X: {x} Y: {y}"); // bogus - always print 0,0
         //ball = new Ball(16, new Vec2(x, y), new Vec2(0, 1));
     }
 
@@ -21,7 +21,7 @@ class Gear : AnimationSprite
     {
         if (!ballPresent)
         {
-            ball = new Ball(32, new Vec2(x, y));
+            ball = new Ball(32, new Vec2(0, 0));
             AddChild(ball);
             ballPresent = true;
         }

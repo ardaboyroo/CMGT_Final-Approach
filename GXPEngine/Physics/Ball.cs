@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 using GXPEngine;
+using TiledMapParser;
 
 public class Ball : EasyDraw
 {
@@ -33,6 +34,30 @@ public class Ball : EasyDraw
     Arrow _velocityIndicator;
 
     float _density = 1;
+
+    bool initialized=false;
+
+    public Ball(TiledObject obj) : base(30,30)
+    {
+        radius=15;
+        Draw(200,200,200);
+
+                myGame = (MyGame)game;
+        myGame.movers.Add(this);
+
+
+        velocity = new Vec2(1,1);
+        this.moving = true;
+
+        //position = pPosition;
+        UpdateScreenPosition();
+        SetOrigin(radius, radius);
+
+
+
+        _velocityIndicator = new Arrow(position, new Vec2(0, 0), 10);
+        AddChild(_velocityIndicator);
+    }
 
     public Ball(int pRadius, Vec2 pPosition, Vec2 pVelocity = new Vec2(), bool moving = true, int color = 230) : base(pRadius * 2 + 1, pRadius * 2 + 1)
     {
@@ -68,6 +93,12 @@ public class Ball : EasyDraw
 
     public void Step()
     {
+
+        if (!initialized)
+        {
+            position=new Vec2(x,y);
+            initialized=true;
+        }
         //Console.WriteLine($"X: {x} Y: {y}");
 
         velocity += acceleration;
