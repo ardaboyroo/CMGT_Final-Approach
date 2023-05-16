@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="40" height="22" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="38">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="40" height="22" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="39">
  <tileset firstgid="1" name="checkers" tilewidth="32" tileheight="32" tilecount="4" columns="2">
   <image source="checkers.png" width="64" height="64"/>
  </tileset>
@@ -35,8 +35,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <imagelayer id="7" name="UI_Overlay">
+  <image source="4_UI_Empty.png" width="1280" height="704"/>
+ </imagelayer>
  <objectgroup id="2" name="Collisions">
-  <object id="3" name="gear" class="Ball" x="32.2803" y="55.7367" width="32" height="32">
+  <object id="3" name="gear" class="Ball" x="83.2803" y="73.7367" width="32" height="32">
    <ellipse/>
   </object>
   <object id="3" name="hitbox" class="CollisionLine" x="29.7448" y="128.963" width="140" height="18.4088" rotation="45"/>
@@ -61,13 +64,11 @@
   <object id="28" name="hitbox" class="CollisionLine" x="401.667" y="404.462" width="206.939" height="18.4088" rotation="45"/>
   <object id="29" name="hitbox" class="CollisionLine" x="388.371" y="379.731" width="23.7575" height="36.5376" rotation="0.0666"/>
   <object id="30" name="hitbox" class="CollisionLine" x="357.867" y="355.723" width="53.7581" height="25.2838" rotation="0.0666"/>
+  <object id="38" name="Home" class="HomeButton" x="181" y="24" width="41" height="49"/>
  </objectgroup>
  <objectgroup id="5" name="Finish">
-  <object id="31" name="Finish" class="FinishArea" x="1120" y="480" width="160" height="160"/>
+  <object id="31" name="Finish" class="FinishArea" x="1118" y="464" width="160" height="160"/>
  </objectgroup>
- <imagelayer id="4" name="UI">
-  <image source="6_UI_Empty.png" width="1280" height="704"/>
- </imagelayer>
  <objectgroup id="6" name="Items">
   <object id="33" name="Box" class="Box" x="502" y="649" width="32" height="32"/>
   <object id="35" name="Driehoek" class="Driehoek" x="681" y="651" width="32" height="32"/>
