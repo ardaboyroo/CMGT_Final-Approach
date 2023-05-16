@@ -92,7 +92,7 @@ public class Level : GameObject
             Box cLine = box as Box;
             var corners = cLine.GetExtents(); // returns global space points
                                               //Console.WriteLine("TODO: In MyGame, add a collision line from {0} to {1}", corners[0], corners[1]);
-
+            
 
             // top line:
             myGame.AddChild(new LineSegment(new Vec2(corners[0].x, corners[0].y), new Vec2(corners[1].x, corners[1].y)));

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GXPEngine.Dialogue;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -9,6 +10,8 @@ namespace GXPEngine.levels
 {
     class Level1 : GameObject
     {
+
+        bool text1loaded;
         
         Level Level = new Level("Level_1.tmx");
         int speach;
@@ -19,6 +22,8 @@ namespace GXPEngine.levels
             Cursor Mouse = new Cursor();
             AddChild(Mouse);
 
+            
+
         }
 
 
@@ -26,18 +31,32 @@ namespace GXPEngine.levels
 
         void Update()
         {
-            switch (speach)
+            //Console.WriteLine(speach);
+           /* if (Input.GetMouseButtonDown(0))
             {
-                case 0:
+                First_Text text1 = new First_Text();
+                speach++;
+                switch (speach)
+                {
+                    case 1:
+                        if (!text1loaded)
+                        {
+                            AddChild(text1);
+                        }
+                        return;
+                    case 2:
 
-                    return;
-                case 1:
-                    return;
-                case 2:
-                    return;
-                case 3:
-                    return;
-            }
+                        RemoveChild(Level1.);                            
+                        Console.WriteLine(" remove child ");
+                            
+                        
+                        return;
+                    case 3:
+                        return;
+                    case 4:
+                        return;
+                }
+            }*/
         }
     }
 }

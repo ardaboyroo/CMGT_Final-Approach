@@ -15,10 +15,10 @@ class CollisionLine : AnimationSprite
     {
         myGame = (MyGame)game;
         alpha = 0.1f;
-        Console.WriteLine(rotation);
+        //Console.WriteLine(rotation);
         // suggested fix: (1) don't do this:
         //AddChild(new LineSegment(new Vec2(obj.X - width / 2, obj.Y - height / 2), new Vec2(obj.X + width / 2, obj.Y - height / 2)));
-        Console.WriteLine(width);
+        //Console.WriteLine(width);
         //AddChild(new LineSegment(new Vec2(0, 500), new Vec2(1200, 500)));
     }
 
