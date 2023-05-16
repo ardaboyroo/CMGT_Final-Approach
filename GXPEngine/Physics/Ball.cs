@@ -9,7 +9,7 @@ public class Ball : EasyDraw
     // These four public static fields are changed from MyGame, based on key input (see Console):
     public static bool drawDebugLine = false;
     public static bool wordy = false;
-    public static float bounciness = 0.6f;
+    public static float bounciness = 0.3f;
     // For ease of testing / changing, we assume every ball has the same acceleration (gravity):
     public static Vec2 acceleration = new Vec2(0, 0.25f);
 
@@ -43,14 +43,14 @@ public class Ball : EasyDraw
     public Ball(TiledObject obj) : base(30, 30)
     {
         radius = 15;
-        Draw(200, 200, 200);
+        Draw(153, 51, 0);
 
         myGame = (MyGame)game;
         myGame.movers.Add(this);
 
         collisions = new List<CollisionInfo>();
 
-        velocity = new Vec2(1, 1);
+        velocity = new Vec2(0, 0);
         this.moving = true;
 
         //position = pPosition;
@@ -59,8 +59,8 @@ public class Ball : EasyDraw
 
 
 
-        _velocityIndicator = new Arrow(position, new Vec2(0, 0), 10);
-        AddChild(_velocityIndicator);
+        //_velocityIndicator = new Arrow(position, new Vec2(0, 0), 10);
+        //AddChild(_velocityIndicator);
     }
 
     public Ball(int pRadius, Vec2 pPosition, Vec2 pVelocity = new Vec2(), bool moving = true, int color = 230) : base(pRadius * 2 + 1, pRadius * 2 + 1)
@@ -76,10 +76,11 @@ public class Ball : EasyDraw
         UpdateScreenPosition();
         SetOrigin(radius, radius);
 
-        Draw((byte)color, 200, 0);
+        // make it brown
+        Draw(204, 102, 0);
 
-        _velocityIndicator = new Arrow(position, new Vec2(0, 0), 10);
-        AddChild(_velocityIndicator);
+        //_velocityIndicator = new Arrow(position, new Vec2(0, 0), 10);
+        //AddChild(_velocityIndicator);
     }
 
     void Draw(byte red, byte green, byte blue)
@@ -276,13 +277,13 @@ public class Ball : EasyDraw
         {
             ((MyGame)game).DrawLine(_oldPosition, position);
         }
-        _velocityIndicator.startPoint = position;
-        _velocityIndicator.vector = velocity;
+        //_velocityIndicator.startPoint = position;
+        //_velocityIndicator.vector = velocity;
     }
 
     void RestartPosition()
     {
-        position.SetXY(83, 74);
+        position.SetXY(161, 106);
         velocity = new Vec2(0, 0);
     }
 

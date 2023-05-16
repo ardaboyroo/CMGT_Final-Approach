@@ -39,7 +39,7 @@
   <image source="4_UI_Empty.png" width="1280" height="704"/>
  </imagelayer>
  <objectgroup id="2" name="Collisions">
-  <object id="3" name="gear" class="Ball" x="83.2803" y="73.7367" width="32" height="32">
+  <object id="3" name="gear" class="Ball" x="161.28" y="106.403" width="32" height="32">
    <ellipse/>
   </object>
   <object id="3" name="hitbox" class="CollisionLine" x="29.7448" y="128.963" width="140" height="18.4088" rotation="45"/>

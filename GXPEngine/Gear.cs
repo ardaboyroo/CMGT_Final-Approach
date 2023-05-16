@@ -5,14 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using TiledMapParser;
 using GXPEngine;
+using System.Drawing;
 
 class Gear : AnimationSprite
 {
     public Ball ball;
     bool ballPresent = false;
 
-    public Gear(TiledObject obj = null) : base("circle.png", 1, 1)
+    public Gear() : base("TestGear.png", 1, 1)
     {
+
+        
         //Console.WriteLine($"X: {x} Y: {y}"); // bogus - always print 0,0
         //ball = new Ball(16, new Vec2(x, y), new Vec2(0, 1));
     }
@@ -29,7 +32,9 @@ class Gear : AnimationSprite
 
     public void Update()
     {
-        AddBall();
+
+        Console.WriteLine($"{x}, {y}");
+        //AddBall();
         //ball.Step();
     }
 }

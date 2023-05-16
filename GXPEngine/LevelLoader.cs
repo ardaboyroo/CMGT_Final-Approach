@@ -26,6 +26,7 @@ public class Level : GameObject
         loader.autoInstance = true;
         loader.LoadObjectGroups();
 
+
         CollisionLine[] lines = FindObjectsOfType<CollisionLine>();
         foreach (var line in lines)
         {
