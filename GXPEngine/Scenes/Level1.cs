@@ -11,7 +11,7 @@ namespace GXPEngine.levels
     {
         
         Level Level = new Level("Level_1.tmx");
-
+        int speach;
         public Level1()
         {
            AddChild(Level);
@@ -21,8 +21,23 @@ namespace GXPEngine.levels
 
         }
 
-        
-        
 
+        //Dialogue 
+
+        void Update()
+        {
+            switch (speach)
+            {
+                case 0:
+
+                    return;
+                case 1:
+                    return;
+                case 2:
+                    return;
+                case 3:
+                    return;
+            }
+        }
     }
 }

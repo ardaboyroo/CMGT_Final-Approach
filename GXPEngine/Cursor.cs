@@ -18,7 +18,7 @@ public class Cursor : Sprite
     bool soundPlayed;
     public Cursor() : base("circle.png")
     {
-        alpha = 1;
+        alpha = 0;
         SetOrigin(this.width/2, this.height/2);
         scale = 0.1f;
 
@@ -39,16 +39,7 @@ public class Cursor : Sprite
 
     void CheckCollision()
     {
-        //check which scene is active for the correct collision data
-        const int mainMenu = 0;
-        const int level1 = 1;
-
-        //Overlays
-        const int credits = 20;
-        const int options = 21;
-        switch (myGame.CurrentLevel)
-        {
-        case mainMenu: 
+       
             GameObject[] collisions = GetCollisions();
                 for (int i = 0; i < collisions.Length; i++)
                 {
@@ -91,11 +82,21 @@ public class Cursor : Sprite
                         }
 
                     }
+
+                    if (collisions[i] is HomeButton)
+                    {
+                        Console.WriteLine(" Home Button xxxxxxxxxxxxxxxxx");
+                        if (Input.GetMouseButton(0))
+                        {
+                            myGame.CurrentLevel = 0;
+                            myGame.LevelManagement();
+                        }
+                    }
                    // else if (collisions[i] is "Greyout.png"){ soundPlayed= false; }
 
                 }   
                 return;
-        }
+        
     }
 
     void PlaySelectSound()

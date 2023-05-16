@@ -97,7 +97,7 @@ public class Ball : EasyDraw
 
     public void Step()
     {
-
+        BoundaryWrapAround();
         if (!initialized)
         {
             position = new Vec2(x, y);
@@ -244,19 +244,28 @@ public class Ball : EasyDraw
     {
         if (position.x < 0)
         {
-            position.x += game.width;
+            Console.WriteLine(" Out of Bounds");
+            RestartPosition();
         }
         if (position.x > game.width)
         {
-            position.x -= game.width;
+            Console.WriteLine(" Out of Bounds");
+            RestartPosition();
         }
         if (position.y < 0)
         {
-            position.y += game.height;
+            Console.WriteLine(" Out of Bounds");
+            RestartPosition();
         }
         if (position.y > game.height)
         {
-            position.y -= game.height;
+            Console.WriteLine(" Out of Bounds");
+            RestartPosition();
+        }
+
+        if (Input.GetKeyDown(82))
+        {
+            RestartPosition();
         }
     }
 
@@ -268,6 +277,26 @@ public class Ball : EasyDraw
         }
         _velocityIndicator.startPoint = position;
         _velocityIndicator.vector = velocity;
+    }
+
+    void RestartPosition()
+    {
+        position.SetXY(83, 74);
+        velocity = new Vec2(0, 0);
+    }
+
+    void FinishDetection()
+    {
+        GameObject[] collisions = GetCollisions();
+        for (int i = 0; i < collisions.Length; i++)
+        {
+            if (collisions[i] is FinishArea)
+            {
+                Console.WriteLine(" You made it ");
+                RestartPosition();
+                Environment.Exit(0);
+            }
+        }
     }
 }
 
