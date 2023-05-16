@@ -181,7 +181,7 @@ public class Ball : EasyDraw
 
                     float toi = TimeOfImpact(this, mover); // TODO TimeOfImpact(_oldPosition - mover.position, , mover);
 
-                    Console.WriteLine(toi);
+                    //Console.WriteLine(toi);
                     collisions.Add(new CollisionInfo(relativePosition, mover, toi)); //TODO: different normal
                     // TODO: Don't *return* here!
                 }

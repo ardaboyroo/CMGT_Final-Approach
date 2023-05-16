@@ -43,7 +43,7 @@ public class Cursor : Sprite
             GameObject[] collisions = GetCollisions();
                 for (int i = 0; i < collisions.Length; i++)
                 {
-                    Console.WriteLine(collisions[i]);
+                    //Console.WriteLine(collisions[i]);
                     if (collisions[i] is Button)
                     {
                         Button button = (Button)collisions[i];

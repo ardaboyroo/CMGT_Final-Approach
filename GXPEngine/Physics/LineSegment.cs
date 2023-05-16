@@ -24,7 +24,7 @@ namespace GXPEngine
 
         public LineSegment(Vec2 pStart, Vec2 pEnd, uint pColor = 0xffffffff, uint pLineWidth = 1)
         {
-            Console.WriteLine( pStart);
+            //Console.WriteLine( pStart);
             myGame = (MyGame)game;
             start = pStart;
             end = pEnd;
