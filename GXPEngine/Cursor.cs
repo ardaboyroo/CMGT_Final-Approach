@@ -15,7 +15,7 @@ public class Cursor : Sprite
 
     SoundChannel UISelectSound;
 
-    bool soundPlayed;
+    
     public Cursor() : base("circle.png")
     {
         alpha = 0;
@@ -50,7 +50,7 @@ public class Cursor : Sprite
 
                         //play clicky select sound
                         PlaySelectSound();
-                        soundPlayed= true;
+                        
 
                         //highlight area
                         button.buttonAlpha = 0.1f;
@@ -58,26 +58,26 @@ public class Cursor : Sprite
                         // check what the string in Tiled says, act accordingly 
                         if (button.buttonType is "Start" && Input.GetMouseButton(0))
                         {
-                            Console.WriteLine("WHOOOO Start BUTTON");
+                           // Console.WriteLine("WHOOOO Start BUTTON");
                             myGame.CurrentLevel = 1;
                             myGame.LevelManagement();
                         }
 
                         if (button.buttonType is "Options" && Input.GetMouseButton(0))
                         {
-                            Console.WriteLine("WHOOOO Options BUTTON");
+                            //Console.WriteLine("WHOOOO Options BUTTON");
                         }
 
                         if (button.buttonType is "Credit" && Input.GetMouseButton(0))
                         {
-                            Console.WriteLine("WHOOOO Credit BUTTON");
+                           // Console.WriteLine("WHOOOO Credit BUTTON");
                             myGame.CurrentLevel = 20;
                             myGame.LevelManagement();
                         }
 
                         if (button.buttonType is "Quit" && Input.GetMouseButton(0))
                         {
-                            Console.WriteLine("WHOOOO Quit BUTTON");
+                            //Console.WriteLine("WHOOOO Quit BUTTON");
                             Environment.Exit(0);
                         }
 
@@ -85,8 +85,8 @@ public class Cursor : Sprite
 
                     if (collisions[i] is HomeButton)
                     {
-                        Console.WriteLine(" Home Button xxxxxxxxxxxxxxxxx");
-                        if (Input.GetMouseButton(0))
+                        //Console.WriteLine(" Home Button xxxxxxxxxxxxxxxxx");
+                       if (Input.GetMouseButton(0));
                         {
                             myGame.CurrentLevel = 0;
                             myGame.LevelManagement();
@@ -101,9 +101,9 @@ public class Cursor : Sprite
 
     void PlaySelectSound()
     {
-        if (!soundPlayed)
+        if (Input.GetMouseButtonUp(0))
         {
-            //UISelectSound = new Sound("menubutton.wav", false, false).Play();
+            UISelectSound = new Sound("menubutton.wav", false, false).Play();
         }
     }
 }

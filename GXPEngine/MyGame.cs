@@ -56,7 +56,7 @@ public class MyGame : Game
                 DestroyAll();
                 menu = new MainMenu();
                 AddChild(menu);
-                Console.WriteLine("MainMenu loaded");
+               // Console.WriteLine("MainMenu loaded");
                 break;
 
             case level1:

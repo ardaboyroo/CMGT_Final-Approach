@@ -1,4 +1,4 @@
-﻿using GXPEngine;
+using GXPEngine;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -94,6 +94,7 @@ public class Level : GameObject
             Box cLine = box as Box;
             var corners = cLine.GetExtents(); // returns global space points
                                               //Console.WriteLine("TODO: In MyGame, add a collision line from {0} to {1}", corners[0], corners[1]);
+            
 
             if (box.placed)
             {
