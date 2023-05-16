@@ -11,6 +11,8 @@ public class HomeButton : AnimationSprite
     {
     public HomeButton(TiledObject obj = null) : base("square.png",1,1)
     {
+        alpha = 0;
+
 
     }
     }

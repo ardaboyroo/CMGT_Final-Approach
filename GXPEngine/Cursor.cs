@@ -88,8 +88,8 @@ public class Cursor : Sprite
                         //Console.WriteLine(" Home Button xxxxxxxxxxxxxxxxx");
                        if (Input.GetMouseButton(0));
                         {
-                            myGame.CurrentLevel = 0;
-                            myGame.LevelManagement();
+                         //   myGame.CurrentLevel = 0;
+                          //  myGame.LevelManagement();
                         }
                     }
                    // else if (collisions[i] is "Greyout.png"){ soundPlayed= false; }

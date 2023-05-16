@@ -97,6 +97,7 @@ public class Ball : EasyDraw
 
     public void Step()
     {
+        FinishDetection(); 
         BoundaryWrapAround();
         if (!initialized)
         {
